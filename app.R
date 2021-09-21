@@ -14,8 +14,6 @@ library(patchwork)
 
 options(shiny.maxRequestSize=100000*1024^2)
 ui <- fluidPage(
-  
-  tags$head(includeHTML(("GoogleAnalytics.html"))),
 
   titlePanel("ELeFHAnt: A supervised machine learning approach for label harmonization and annotation of single cell RNA-seq data"),
 
