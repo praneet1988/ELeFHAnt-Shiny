@@ -250,7 +250,7 @@ ui <- fluidPage(
         p1+p2
       }
       else if(input$predictedcelltypes == 'Gene Expression') {
-        FeaturePlot(celltypeannotation(), input$Gene, order = TRUE, pt.size = 0.5)
+        FeaturePlot(celltypeannotation(), input$Gene, order = TRUE, pt.size = 0.5, reduction = input$DM)
       }
     }
     else if(input$Module == 'Label harmonization') {
@@ -260,7 +260,7 @@ ui <- fluidPage(
         p1+p2
       }
       else if(input$harmonizedcelltypes == 'Gene Expression') {
-        FeaturePlot(labelharmonization(), input$Gene, order = TRUE, pt.size = 0.5)
+        FeaturePlot(labelharmonization(), input$Gene, order = TRUE, pt.size = 0.5, reduction = input$DM)
       }
     }
     else if(input$Module == 'Deduce Relationship') {
@@ -281,7 +281,7 @@ ui <- fluidPage(
             ggsave(file, width=15, height=15, dpi=800)
           }
           else if(input$predictedcelltypes == 'Gene Expression') {
-            FeaturePlot(celltypeannotation(), input$Gene, order = TRUE, pt.size = 0.5)
+            FeaturePlot(celltypeannotation(), input$Gene, order = TRUE, pt.size = 0.5, reduction = input$DM)
             ggsave(file, width=10, height=10, dpi=800)
           }
         }
@@ -293,7 +293,7 @@ ui <- fluidPage(
             ggsave(file, width=15, height=15, dpi=800)
           }
           else if(input$harmonizedcelltypes == 'Gene Expression') {
-            FeaturePlot(labelharmonization(), input$Gene, order = TRUE, pt.size = 0.5)
+            FeaturePlot(labelharmonization(), input$Gene, order = TRUE, pt.size = 0.5, reduction = input$DM)
             ggsave(file, width=10, height=10, dpi=800)
           }
         }
