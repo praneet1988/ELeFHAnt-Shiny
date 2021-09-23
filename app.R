@@ -15,7 +15,13 @@ library(patchwork)
 options(shiny.maxRequestSize=100000*1024^2)
 ui <- fluidPage(
 
-  titlePanel("ELeFHAnt: A supervised machine learning approach for label harmonization and annotation of single cell RNA-seq data"),
+tags$style(HTML("
+      body {
+        background-color: Lavender;
+      }
+  ")),
+  
+  titlePanel(h1("ELeFHAnt: A supervised machine learning approach for label harmonization and annotation of single cell RNA-seq data",style="font-size:20px;color:DarkBlue;font-weight: bold;")),
 
   sidebarLayout(
    
@@ -157,7 +163,7 @@ ui <- fluidPage(
   list(src = 'www/pipeline.png',
          contentType = 'image/png',
          width = 800,
-         height = 800,
+         height = 450,
          alt = "ELeFHAnt Model")
   }, deleteFile = F)
 
@@ -165,7 +171,7 @@ ui <- fluidPage(
   list(src = 'www/CCHMC-logo.png',
          contentType = 'image/png',
          width = 300,
-         height = 300,
+         height = 150,
          alt = "CCHMC Logo")
   }, deleteFile = F)
 
