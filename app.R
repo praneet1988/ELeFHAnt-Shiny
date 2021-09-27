@@ -21,7 +21,7 @@ tags$style(HTML("
       }
   ")),
   
-  titlePanel(h1("ELeFHAnt: A supervised machine learning approach for label harmonization and annotation of single cell RNA-seq data",style="font-size:20px;color:DarkBlue;font-weight: bold;")),
+  titlePanel(h1("ELeFHAnt: A supervised machine learning approach for label harmonization and annotation of single cell RNA-seq data",style="font-size:20px;color:DarkBlue;font-weight: bold;"),windowTitle = "ELeFHAnt: A supervised machine learning approach for label harmonization and annotation of single cell RNA-seq data"),
 
   sidebarLayout(
    
