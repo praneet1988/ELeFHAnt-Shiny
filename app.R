@@ -41,7 +41,7 @@ tags$style(HTML("
       conditionalPanel(
         condition = "input.Module == 'Celltype Annotation'",
         fileInput("query",
-                  label = "Upload query (Accepted Format(.rds): Seurat object with seurat_clusters column in meta data)",
+                  label = "Upload Query (Accepted Format(.rds): Seurat object with seurat_clusters column in meta data)",
                   accept = c(".rds"))),
 
       conditionalPanel(
@@ -82,7 +82,7 @@ tags$style(HTML("
         condition = "input.Module == 'Celltype Annotation' || input.Module == 'Label harmonization' || input.Module == 'Deduce Relationship'",
         numericInput("downsampleto", 
                     label = "Number of cells to downsample to",
-                    value = 300)),
+                    value = 100)),
 
       conditionalPanel(
         condition = "input.Module == 'Celltype Annotation' || input.Module == 'Label harmonization' || input.Module == 'Deduce Relationship'",
@@ -105,7 +105,7 @@ tags$style(HTML("
       conditionalPanel(
         condition = "input.Module == 'Celltype Annotation'",
         selectInput("predictedcelltypes", 
-                    label = "Color UMAP by",
+                    label = "Color Cells by",
                     choices = c("PredictedCelltype_UsingRF", "PredictedCelltype_UsingSVM", "PredictedCelltype_UsingEnsemble", "Gene Expression"),
                     selected = "PredictedCelltype_UsingEnsemble",
                     multiple = FALSE)),
@@ -113,7 +113,7 @@ tags$style(HTML("
       conditionalPanel(
         condition = "input.Module == 'Label harmonization'",
         selectInput("harmonizedcelltypes", 
-                    label = "Color UMAP by",
+                    label = "Color Cells by",
                     choices = c("HarmonizedLabels_UsingRF", "HarmonizedLabels_UsingSVM", "HarmonizedLabels_UsingEnsemble", "Gene Expression"),
                     selected = "PredictedCelltype_UsingEnsemble",
                     multiple = FALSE)),
@@ -149,9 +149,11 @@ tags$style(HTML("
                 p(strong("Ensemble Learning for Harmonization and Annotation of Single Cells (ELeFHAnt)"), "provides an easy to use R package for users to annotate clusters of single cells, harmonize labels across single cell datasets to generate a unified atlas and infer relationship among celltypes between two datasets. It provides users with the flexibility of choosing a single machine learning based classifier or letting ELeFHAnt automatically use the power of randomForest and SVM (Support Vector Machines) to make predictions. It has three functions", strong("1) CelltypeAnnotation 2) LabelHarmonization 3) DeduceRelationship"), style="text-align:justify;color:black;background-color:white;padding:20px;border-radius:10px;font-size:15px"),
                 p("For", strong("ELeFHAnt R package"), "installation please see", a("GitHub", href = "https://github.com/praneet1988/ELeFHAnt", target = "_blank"), style="text-align:justify;color:black;background-color:white;padding:20px;border-radius:10px;font-size:15px"),
                 p("Download processed", strong("reference datasets"), "from", a("Reference Datasets", href = "https://www.dropbox.com/sh/6hd2skriqqlokwp/AAAVol-_qPlCdA4DpERWjkeJa?dl=0", target = "_blank"), "to use as plugins", style="text-align:justify;color:black;background-color:white;padding:20px;border-radius:10px;font-size:15px"),
-                p("Please post issues, suggestions and improvements using", a("Issues/Bugs", href = "https://github.com/praneet1988/ELeFHAnt", target = "_blank"), style="text-align:justify;color:black;background-color:white;padding:20px;border-radius:10px;font-size:15px"),
+                p("Please post issues, suggestions and improvements using", a("Issues/Bugs", href = "https://github.com/praneet1988/ELeFHAnt-Shiny", target = "_blank"), style="text-align:justify;color:black;background-color:white;padding:20px;border-radius:10px;font-size:15px"),
                 p("Explore and cite our", strong("preprint"), "ELeFHAnt: A supervised machine learning approach for label harmonization and annotation of single cell RNA-seq data", a("Cite", href = "https://www.biorxiv.org/content/10.1101/2021.09.07.459342v1", target = "_blank"), style="text-align:justify;color:black;background-color:white;padding:20px;border-radius:10px;font-size:15px"),
                 p("Developed and maintained by", strong("Praneet Chaturvedi and Konrad Thorner"), ". To view other tools and contributions please visit", a("GitHub", href = "https://github.com/praneet1988/", target = "_blank"), style="text-align:justify;color:black;background-color:white;padding:20px;border-radius:10px;font-size:15px")), imageOutput('Pipeline'), imageOutput('Logo')),
+              tabPanel("ELeFHAnt Tutorial", fluidRow(
+                p(includeMarkdown("ELeFHAnt_README.md")))),
               tabPanel("Plot Visualization", downloadButton('downloadPlot', 'Save Plot'), shinycssloaders::withSpinner(plotOutput("Plot"), size = 3))
           )
       )
