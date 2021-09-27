@@ -3,6 +3,7 @@ ELeFHAnt: A supervised machine learning approach for label harmonization and ann
 
 # Launch App
 ```
+if (!require("shiny")) install.packages("shiny", repos="http://cran.us.r-project.org")
 library(shiny)
 runGitHub("ELeFHAnt-Shiny", "praneet1988", launch.browser = TRUE, ref="main")
 
