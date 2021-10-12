@@ -15,6 +15,7 @@ library(patchwork)
 options(shiny.maxRequestSize=100000*1024^2)
 ui <- fluidPage(
 
+tags$head(includeHTML(("ELeFHAntAnalytics.html"))),
 tags$style(HTML("
       body {
         background-color: Lavender;
