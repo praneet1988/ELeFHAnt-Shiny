@@ -2,12 +2,16 @@
 ELeFHAnt: A supervised machine learning approach for label harmonization and annotation of single cell RNA-seq data (Shiny App)
 
 # Launch App
-```
+
+Please access the app using: https://elefhant.research.cchmc.org/
+
+OR 
+
 if (!require("shiny")) install.packages("shiny", repos="http://cran.us.r-project.org")
 library(shiny)
 runGitHub("ELeFHAnt-Shiny", "praneet1988", launch.browser = TRUE, ref="main")
 
-```
+
 # Citation
 Please cite our preprint: https://www.biorxiv.org/content/10.1101/2021.09.07.459342v1 when using ELeFHAnt in your research.
 
