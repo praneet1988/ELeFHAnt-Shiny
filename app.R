@@ -2,7 +2,7 @@
 if (!require("devtools")) install.packages("devtools", repos="http://cran.us.r-project.org")
 if (!require("shiny")) install.packages("shiny", repos="http://cran.us.r-project.org")
 if (!require("shinycssloaders")) install.packages("shinycssloaders", repos="http://cran.us.r-project.org")
-if (!require("ELeFHAnt")) devtools::install_github('praneet1988/ELeFHAnt')
+if (!require("ELeFHAnt")) devtools::install_github('CuSTOM-Bio//ELeFHAnt_Rcode-webapp')
 if (!require("patchwork")) install.packages("patchwork", repos="http://cran.us.r-project.org")
 library(devtools)
 library(shiny)
